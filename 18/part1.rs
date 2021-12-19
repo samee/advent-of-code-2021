@@ -2,8 +2,18 @@ use std::io::BufRead;
 use std::ops::{Deref,DerefMut};
 
 // Learn: Had a lot of truble destructuring Box of pair without moving
-// out of it. r.deref() is not the same thing as *r.
+// out of it. r.deref() is not the same thing as *r. It's more like C++
+// operator*(), where *r is the same as *r.deref().
+
 // Not sure why in split() I'm allowed to borrow both x and t
+/*
+   Look into:
+   * is `box` a keyword, given how it's highlighted here? Perma-unstable.
+   * semantics of `ref` `mut` and `ref mut` in patterns.
+     Do they only appear with variables, references, all of the above?
+     They help avoid copying or moving accidentally.
+   * when is it useful to use `as_ref` vars? As below.
+   */
 #[derive(Debug)]
 enum Tree {
   Leaf(u32),
@@ -53,7 +63,7 @@ fn explode(t: &mut Tree, depth: u32) -> Option<(u32,u32)> {
     Tree::Pair(bx) => {
       if depth >= 4 {
         let (&l, &r) = {
-          if let (Tree::Leaf(l), Tree::Leaf(r)) = (*bx).deref() { (l,r) }
+          if let (Tree::Leaf(l), Tree::Leaf(r)) = bx.as_ref() { (l,r) }
           else { panic!("Got a big tree") }
         };
         *t = Tree::Leaf(0);

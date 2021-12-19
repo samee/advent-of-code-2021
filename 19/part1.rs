@@ -30,18 +30,15 @@ impl std::fmt::Display for HasOverlapFailed {
   }
 }
 
-// On error, returns the best overlap amount
-fn has_overlap(set0: &Readings, seti: &Readings, xform: &Xform)
-               -> Result<(), HasOverlapFailed> {
+fn count_overlap(set0: &Readings, seti: &Readings, xform: &Xform) -> i32 {
   let mut common = 0;
   for pt in seti {
     if set0.contains(&xform.apply(pt)) {
       common += 1;
-      if common >= 12 { return Ok(()) }
     }
   }
   assert!(common>0);
-  return Err(HasOverlapFailed(common))
+  common
 }
 fn all_rotations() -> [[i32;3];24] {
   fn neg_perm(mut l: [i32;3]) -> bool {
@@ -71,6 +68,7 @@ fn find_overlap(
   seta: &Readings, setb: &Readings,
   rots: &[[i32;3];24]) -> Result<Xform, HasOverlapFailed> {
   let mut best_olap = 0;
+  let mut best_xform = Xform{offset: [0;3], rot: [1,2,3]};
   for rot in rots {
     for ptb in setb.iter().map(|pt| rotate(pt, rot)) {
       for pta in seta {
@@ -78,14 +76,16 @@ fn find_overlap(
           offset: [pta[0]-ptb[0], pta[1]-ptb[1], pta[2]-ptb[2]],
           rot: rot.clone(),
         };
-        match has_overlap(seta, setb, &xform) {
-          Ok(()) => return Ok(xform),
-          Err(HasOverlapFailed(olap)) => best_olap = best_olap.max(olap),
+        let olap = count_overlap(seta, setb, &xform);
+        if olap > best_olap {
+          best_olap = olap;
+          best_xform = xform;
         }
       }
     }
   }
-  Err(HasOverlapFailed(best_olap))
+  if best_olap >= 12 { Ok(best_xform) }
+  else { Err(HasOverlapFailed(best_olap)) }
 }
 
 fn read_scanner_readings() -> Vec<Readings> {

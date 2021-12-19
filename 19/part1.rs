@@ -18,6 +18,10 @@ impl Xform {
   }
 }
 
+fn at_mut<T>(arr: &mut[T], i1: usize, i2: usize) -> (&mut T, &mut T) {
+  let (a1,a2) = arr.split_at_mut(i2);
+  (&mut a1[i1], &mut a2[0])
+}
 fn rotate(pt: &[i32;3], rot: &[i32;3]) -> [i32;3] {
   Xform{offset: [0;3], rot: *rot}.apply(pt)
 }
@@ -134,21 +138,24 @@ fn main() {
         match find_overlap(&readings[i], &readings[j], &rots) {
           Ok(xform) => {
             let orig_sizes = (readings[i].len(), readings[j].len());
-            let (r1,r2) = readings.split_at_mut(j);
-            combine(&mut r1[i], &r2[0], &xform);
-            r2[0].clear();
+            let (ri,rj) = at_mut(&mut readings, i, j);
+            combine(ri, rj, &xform);
+            rj.clear();
             println!("Combined {} <- {}, sizes: {} <- {},{}, overlap {}", i, j,
-                     r1[i].len(), orig_sizes.0, orig_sizes.1,
-                     orig_sizes.0+orig_sizes.1-r1[i].len());
+                     ri.len(), orig_sizes.0, orig_sizes.1,
+                     orig_sizes.0+orig_sizes.1-ri.len());
+
             progress = true;
           },
-          Err(HasOverlapFailed(x)) =>
+          Err(HasOverlapFailed(x)) if x > 1 =>
             println!("  Best overlap between {} and {}: {}", i, j, x),
+          _ => (),
         }
       }
     }
     if !progress { break }
   }
-  println!("Beacon count: {:?}",
-           readings.iter().map(|r| r.len()).collect::<Vec<_>>());
+  let beacon_count : Vec<_> = readings.iter().map(|r| r.len()).collect();
+  assert!(beacon_count[1..].iter().all(|c| *c==0));
+  println!("Beacon count: {}", beacon_count[0]);
 }

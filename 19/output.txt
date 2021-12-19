@@ -33,5 +33,5 @@ Combined 0 <- 6, sizes: 268 <- 257,26, overlap 15
 Combined 0 <- 13, sizes: 276 <- 268,26, overlap 18
 Combined 3 <- 11, sizes: 89 <- 82,25, overlap 18
 Combined 0 <- 3, sizes: 353 <- 276,89, overlap 12
-Beacon count: [353, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Beacon count: 353
 Max dist: 10832

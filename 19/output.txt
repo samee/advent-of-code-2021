@@ -3,7 +3,7 @@
   Best overlap between 0 and 3: 1
   Best overlap between 0 and 4: 1
   Best overlap between 0 and 5: 1
-  Best overlap between 0 and 6: 1
+  Best overlap between 0 and 6: 3
   Best overlap between 0 and 7: 1
   Best overlap between 0 and 8: 1
   Best overlap between 0 and 9: 1
@@ -13,185 +13,73 @@
   Best overlap between 0 and 13: 1
 Combined 0 <- 14, sizes: 39 <- 26,25, overlap 12
 Combined 0 <- 15, sizes: 53 <- 39,26, overlap 12
-  Best overlap between 0 and 16: 2
+Combined 0 <- 16, sizes: 67 <- 53,26, overlap 12
   Best overlap between 0 and 17: 1
-  Best overlap between 0 and 18: 1
+Combined 0 <- 18, sizes: 81 <- 67,26, overlap 12
   Best overlap between 0 and 19: 1
-  Best overlap between 0 and 20: 1
+  Best overlap between 0 and 20: 6
   Best overlap between 0 and 21: 1
   Best overlap between 0 and 22: 6
   Best overlap between 0 and 23: 6
   Best overlap between 0 and 24: 1
   Best overlap between 0 and 25: 1
-  Best overlap between 0 and 26: 1
+Combined 0 <- 26, sizes: 95 <- 81,26, overlap 12
 Combined 1 <- 2, sizes: 40 <- 26,26, overlap 12
   Best overlap between 1 and 3: 1
-  Best overlap between 1 and 4: 1
+  Best overlap between 1 and 4: 3
   Best overlap between 1 and 5: 1
   Best overlap between 1 and 6: 1
 Combined 1 <- 7, sizes: 54 <- 40,26, overlap 12
 Combined 1 <- 8, sizes: 68 <- 54,26, overlap 12
 Combined 1 <- 9, sizes: 82 <- 68,26, overlap 12
-  Best overlap between 1 and 10: 1
+Combined 1 <- 10, sizes: 95 <- 82,25, overlap 12
   Best overlap between 1 and 11: 1
   Best overlap between 1 and 12: 1
-  Best overlap between 1 and 13: 1
-  Best overlap between 1 and 16: 1
+  Best overlap between 1 and 13: 9
   Best overlap between 1 and 17: 1
-  Best overlap between 1 and 18: 6
   Best overlap between 1 and 19: 3
-  Best overlap between 1 and 20: 1
+Combined 1 <- 20, sizes: 103 <- 95,26, overlap 18
   Best overlap between 1 and 21: 1
   Best overlap between 1 and 22: 1
   Best overlap between 1 and 23: 1
-  Best overlap between 1 and 24: 1
+  Best overlap between 1 and 24: 6
   Best overlap between 1 and 25: 1
-  Best overlap between 1 and 26: 1
   Best overlap between 3 and 4: 1
   Best overlap between 3 and 5: 1
   Best overlap between 3 and 6: 1
-  Best overlap between 3 and 10: 1
   Best overlap between 3 and 11: 1
-  Best overlap between 3 and 12: 1
+Combined 3 <- 12, sizes: 40 <- 26,26, overlap 12
   Best overlap between 3 and 13: 1
-  Best overlap between 3 and 16: 1
-  Best overlap between 3 and 17: 1
-  Best overlap between 3 and 18: 1
+Combined 3 <- 17, sizes: 53 <- 40,25, overlap 12
   Best overlap between 3 and 19: 1
-  Best overlap between 3 and 20: 1
-  Best overlap between 3 and 21: 1
+Combined 3 <- 21, sizes: 67 <- 53,26, overlap 12
   Best overlap between 3 and 22: 1
   Best overlap between 3 and 23: 1
-  Best overlap between 3 and 24: 1
+Combined 3 <- 24, sizes: 82 <- 67,27, overlap 12
   Best overlap between 3 and 25: 1
-  Best overlap between 3 and 26: 1
   Best overlap between 4 and 5: 1
   Best overlap between 4 and 6: 1
-  Best overlap between 4 and 10: 6
   Best overlap between 4 and 11: 1
-  Best overlap between 4 and 12: 1
   Best overlap between 4 and 13: 1
-  Best overlap between 4 and 16: 1
-  Best overlap between 4 and 17: 1
-  Best overlap between 4 and 18: 1
 Combined 4 <- 19, sizes: 38 <- 25,25, overlap 12
-Combined 4 <- 20, sizes: 52 <- 38,26, overlap 12
-  Best overlap between 4 and 21: 1
   Best overlap between 4 and 22: 1
   Best overlap between 4 and 23: 1
-  Best overlap between 4 and 24: 6
-  Best overlap between 4 and 25: 1
-  Best overlap between 4 and 26: 1
+Combined 4 <- 25, sizes: 51 <- 38,25, overlap 12
   Best overlap between 5 and 6: 1
-  Best overlap between 5 and 10: 1
   Best overlap between 5 and 11: 1
-  Best overlap between 5 and 12: 1
   Best overlap between 5 and 13: 1
-  Best overlap between 5 and 16: 1
-  Best overlap between 5 and 17: 1
-  Best overlap between 5 and 18: 1
-  Best overlap between 5 and 21: 1
 Combined 5 <- 22, sizes: 38 <- 25,25, overlap 12
 Combined 5 <- 23, sizes: 53 <- 38,27, overlap 12
-  Best overlap between 5 and 24: 1
-  Best overlap between 5 and 25: 1
-Combined 5 <- 26, sizes: 67 <- 53,26, overlap 12
-  Best overlap between 6 and 10: 1
   Best overlap between 6 and 11: 1
-  Best overlap between 6 and 12: 1
   Best overlap between 6 and 13: 1
-  Best overlap between 6 and 16: 1
-  Best overlap between 6 and 17: 1
-  Best overlap between 6 and 18: 6
-  Best overlap between 6 and 21: 1
-  Best overlap between 6 and 24: 1
-  Best overlap between 6 and 25: 1
-  Best overlap between 10 and 11: 1
-  Best overlap between 10 and 12: 1
-  Best overlap between 10 and 13: 1
-  Best overlap between 10 and 16: 3
-  Best overlap between 10 and 17: 1
-  Best overlap between 10 and 18: 1
-  Best overlap between 10 and 21: 1
-  Best overlap between 10 and 24: 3
-  Best overlap between 10 and 25: 1
-  Best overlap between 11 and 12: 1
   Best overlap between 11 and 13: 1
-  Best overlap between 11 and 16: 1
-  Best overlap between 11 and 17: 6
-  Best overlap between 11 and 18: 1
-Combined 11 <- 21, sizes: 39 <- 25,26, overlap 12
-  Best overlap between 11 and 24: 1
-  Best overlap between 11 and 25: 1
-  Best overlap between 12 and 13: 1
-  Best overlap between 12 and 16: 1
-Combined 12 <- 17, sizes: 39 <- 26,25, overlap 12
-  Best overlap between 12 and 18: 1
-Combined 12 <- 24, sizes: 54 <- 39,27, overlap 12
-  Best overlap between 12 and 25: 1
-Combined 13 <- 16, sizes: 40 <- 26,26, overlap 12
-Combined 13 <- 18, sizes: 54 <- 40,26, overlap 12
-  Best overlap between 13 and 25: 1
-Combined 0 <- 1, sizes: 123 <- 53,82, overlap 12
-  Best overlap between 0 and 3: 1
-Combined 0 <- 4, sizes: 163 <- 123,52, overlap 12
-  Best overlap between 0 and 5: 2
-  Best overlap between 0 and 6: 1
-  Best overlap between 0 and 10: 1
+Combined 0 <- 1, sizes: 180 <- 95,103, overlap 18
+  Best overlap between 0 and 3: 6
+Combined 0 <- 4, sizes: 219 <- 180,51, overlap 12
+Combined 0 <- 5, sizes: 257 <- 219,53, overlap 15
+Combined 0 <- 6, sizes: 268 <- 257,26, overlap 15
   Best overlap between 0 and 11: 1
-  Best overlap between 0 and 12: 6
-Combined 0 <- 13, sizes: 193 <- 163,54, overlap 24
-Combined 0 <- 25, sizes: 206 <- 193,25, overlap 12
-  Best overlap between 3 and 5: 1
-  Best overlap between 3 and 6: 1
-  Best overlap between 3 and 10: 1
-  Best overlap between 3 and 11: 1
-  Best overlap between 3 and 12: 1
-  Best overlap between 5 and 6: 1
-  Best overlap between 5 and 10: 1
-  Best overlap between 5 and 11: 1
-  Best overlap between 5 and 12: 1
-  Best overlap between 6 and 10: 1
-  Best overlap between 6 and 11: 1
-  Best overlap between 6 and 12: 1
-  Best overlap between 10 and 11: 1
-  Best overlap between 10 and 12: 3
-  Best overlap between 11 and 12: 1
-  Best overlap between 0 and 3: 1
-  Best overlap between 0 and 5: 2
-  Best overlap between 0 and 6: 1
-  Best overlap between 0 and 10: 1
-  Best overlap between 0 and 11: 1
-Combined 0 <- 12, sizes: 248 <- 206,54, overlap 12
-  Best overlap between 3 and 5: 1
-  Best overlap between 3 and 6: 1
-  Best overlap between 3 and 10: 1
-  Best overlap between 3 and 11: 1
-  Best overlap between 5 and 6: 1
-  Best overlap between 5 and 10: 1
-  Best overlap between 5 and 11: 1
-  Best overlap between 6 and 10: 1
-  Best overlap between 6 and 11: 1
-  Best overlap between 10 and 11: 1
-  Best overlap between 0 and 3: 1
-  Best overlap between 0 and 5: 2
-  Best overlap between 0 and 6: 1
-  Best overlap between 0 and 10: 1
-Combined 0 <- 11, sizes: 269 <- 248,39, overlap 18
-  Best overlap between 3 and 5: 1
-  Best overlap between 3 and 6: 1
-  Best overlap between 3 and 10: 1
-  Best overlap between 5 and 6: 1
-  Best overlap between 5 and 10: 1
-  Best overlap between 6 and 10: 1
-  Best overlap between 0 and 3: 1
-  Best overlap between 0 and 5: 2
-  Best overlap between 0 and 6: 1
-  Best overlap between 0 and 10: 1
-  Best overlap between 3 and 5: 1
-  Best overlap between 3 and 6: 1
-  Best overlap between 3 and 10: 1
-  Best overlap between 5 and 6: 1
-  Best overlap between 5 and 10: 1
-  Best overlap between 6 and 10: 1
-Beacon count: [269, 0, 0, 26, 0, 67, 26, 0, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Combined 0 <- 13, sizes: 276 <- 268,26, overlap 18
+Combined 3 <- 11, sizes: 89 <- 82,25, overlap 18
+Combined 0 <- 3, sizes: 353 <- 276,89, overlap 12
+Beacon count: [353, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

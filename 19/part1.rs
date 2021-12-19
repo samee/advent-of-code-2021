@@ -40,28 +40,31 @@ fn count_overlap(set0: &Readings, seti: &Readings, xform: &Xform) -> i32 {
   assert!(common>0);
   common
 }
+// This took way too much time and had way too many bugs
+// The problem was to visually or easily confirm that there were no errors
 fn all_rotations() -> [[i32;3];24] {
-  fn neg_perm(mut l: [i32;3]) -> bool {
-    let mut c = 0;
-    while l[0].abs() > l[1].abs() || l[1].abs() > l[2].abs() {
-      if l[0].abs() > l[1].abs() { l.swap(0, 1); c+=1 }
-      if l[1].abs() > l[2].abs() { l.swap(1, 2); c+=1 }
-    }
-    [c==1 || c==3, l[0] < 0, l[1] < 0].iter().filter(|&v| *v).count() % 2 == 1
+  fn one_count(i: usize) -> usize {
+    if i==0 { 0 }
+    else if i%2 == 0 { one_count(i/2) }
+    else { 1+one_count(i/2) }
   }
+  let perms = [
+    [1,2,3], [1,3,2], [3,1,2],
+    [3,2,1], [2,3,1], [2,1,3],
+  ];
   let mut rv = [[0;3];24];
-  let mut i = 0;
-  for x in -3i32..=3 {
-    if x == 0 { continue }
-    for y in -3i32..=3 {
-      if y == 0 || x.abs() == y.abs() { continue }
-      let zabs = 6-x.abs()-y.abs();
-      let z = if neg_perm([x, y, zabs]) { -zabs } else {zabs};
-      rv[i] = [x, y, z];
-      i+=1;
+  let mut outc = 0;
+  for i in 0..6 {
+    for j in 0..8 {
+      if (one_count(j) + i) % 2 == 1 { continue }
+      rv[outc] = perms[i];
+      for k in 0..3 {
+        if j & (1<<k) != 0 { rv[outc][k] = -rv[outc][k] }
+      }
+      outc += 1;
     }
   }
-  assert!(i==24);
+  assert!(outc==24);
   rv
 }
 fn find_overlap(
@@ -70,7 +73,9 @@ fn find_overlap(
   let mut best_olap = 0;
   let mut best_xform = Xform{offset: [0;3], rot: [1,2,3]};
   for rot in rots {
+    //let mut firstb = true;
     for ptb in setb.iter().map(|pt| rotate(pt, rot)) {
+      //if firstb { firstb = false; println!("    Rotated: {:?}", ptb); }
       for pta in seta {
         let xform = Xform{
           offset: [pta[0]-ptb[0], pta[1]-ptb[1], pta[2]-ptb[2]],

@@ -1,0 +1,252 @@
+inp w
+mul x 0   ; 0
+add x z   ; z
+mod x 26  ; z%26
+div z 1   ; z
+add x 10  ; z%26+10
+eql x w   ; w==z%26+10
+eql x 0   ; w!=z%26+10
+mul y 0   ; 0
+add y 25  ; 25
+mul y x   ; 25 * (w!=z%26+10)
+add y 1   ; 1 + 25 * (w!=z%26+10)
+mul z y   ; z0 * (1 + 25 * (w!=z%26+10))
+mul y 0   ;
+add y w   ; w
+add y 2   ; w+2
+mul y x   ; (w+2) * (w!=z%26+10)
+add z y   ; z1 = z0 + (25*z0 + w+2) * (w!=z0%26+10)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 15
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 16
+mul y x
+add z y   ; z2 = z1 + (25*z1 + w+16) * (w!=z1%26+15)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y   ; z3 = z2 + (25*z2 + w+9) * (w!=z2%26+14)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 15
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 0
+mul y x
+add z y   ; z4 = z3 + (25*z3 + w+0) * (w!=z3%26+15)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -8
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 1
+mul y x
+add z y   ; z5 = z4/26 + (25*(z4/26) + w+1) * (w!=z4%26-8)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 10
+eql x w
+eql x 0   ; w!=z5%26+10
+mul y 0
+add y 25
+mul y x   ; 25 * (...)
+add y 1   ; 1 + 25*(...)
+mul z y   ; z5 + 25*z5*(...)
+mul y 0
+add y w
+add y 12
+mul y x
+add z y   ; z6 = z5 + (25*z5 + w+12) * (w!=z5%26+10)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -16
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 6
+mul y x
+add z y   ; z7 = (z6/26) + (25*(z6/26) + w+6) * (w!=z6%26-16)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -4
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 6
+mul y x
+add z y   ; z8 = (z7/26) + (25*(z7/26) + w+6) * (w!=z7%26-4)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 11
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 3
+mul y x
+add z y   ; z9 = z8 + (25*z8 + w+3) * (w!=z8%26+11)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -3
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 5
+mul y x
+add z y   ; z10 = (z9/26) + (25*(z9/26) + w+5) * (w!=z9%26-3)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y   ; z11 = z10 + (25*z10 + w+9) * (w!=z10%26+12)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -7
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 3
+mul y x
+add z y   ; z12 = (z11/26) + (25*(z11/26) + w+3) * (w!=z11%26-7)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -15
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 2
+mul y x
+add z y   ; z13 = (z12/26) + (25*(z12/26) + w+2) * (w!=z12%26-15)
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -7
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 3
+mul y x
+add z y   ; z14 = (z13/26) + (25*(z13/26) + w+3) * (w!=z13%26-7)
